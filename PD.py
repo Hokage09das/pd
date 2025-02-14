@@ -31,7 +31,7 @@ for us_credit_number in us_credit_numbers:
                 if isinstance(value, int): 
                     found_value = value
                     break  
-       
+        
         if found_value is not None:
             credit[date] = found_value
         else:
