@@ -1,7 +1,12 @@
 from excel_getter import parse_excel_to_dict_list,create_empty_excel
 from datetime import datetime
 print('start')
-data = parse_excel_to_dict_list(filepath='example.xlsx')
+excel_data = parse_excel_to_dict_list(filepath='example.xlsx')
+data = []
+for item in excel_data:
+    if item['UsCreditNumber'].startswith('ОКК') or item['UsCreditNumber'].startswith('КК'):
+        data.append(item)
+
 
 all_dates = set()
 for entry in data:
